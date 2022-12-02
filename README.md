@@ -34,11 +34,8 @@ tested this on linux/mac osx, and are unsure how the process will differ
 for Windows). Then, make sure 
 that you have downloaded the Dataverse repository and that the 
 `osm` folder is present. 
-The OSM file `CANVAZ.osm` is quite large and has been split into 
-multiple files. 
-To recombine these into a single file, run: 
+The OSM file `CANVAZ.osm` is quite large and has been compressed. First, run: 
 ```
-cat CANVAZ.osm.gz.part* > CANVAZ.osm.gz
 gzip -d CANVAZ.osm.gz
 ```
 Then, create a OSRM server instance
