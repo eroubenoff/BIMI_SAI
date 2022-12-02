@@ -1,4 +1,5 @@
-# Replication code for Roubenoff, Slootjes, and Bloemraad, Spatial and Sociodemographic Vulnerability: Quantifying Accessibility to Health Care and Legal Services for Immigrants in California, Arizona, and Nevada
+# Replication code for Roubenoff, Slootjes, and Bloemraad
+## Spatial and Sociodemographic Vulnerability: Quantifying Accessibility to Health Care and Legal Services for Immigrants in California, Arizona, and Nevada
 
 ![Bay Area Fig](Bay_area.png)
 
@@ -23,18 +24,32 @@ dataverse repository.
 For this project, we calculated travel-time buffers around census tracts
 and clinic locations. We used OpenStreetMap and the OpenSourceRoutingMachine
 to do so. Replicating these buffers is not a trivial operation, so we 
-have included the calculated buffers within the Dataverse repository `data` folder.
+have included the calculated buffers within the Dataverse repository `data` folder,
+and the following steps are not needed to run the analysis.
 
 To replicate the buffers, you must first install OSM and OSRM following
-the instructions on their respective websites. Then, extract the file `CANVAZ.osm.gz` 
-in the dataverse folder `osm` and create a OSRM server instance.
+the instructions on their respective websites. [This quide](https://benjaminberhault.com//post/2018/12/08/set-up-an-osrm-server-on-ubuntu.html) 
+was very helpful (Note: we have only 
+tested this on linux/mac osx, and are unsure how the process will differ
+for Windows). Then, make sure 
+that you have downloaded the Dataverse repository and that the 
+`osm` folder is present. 
+The OSM file `CANVAZ.osm` is quite large and has been split into 
+multiple files. 
+To recombine these into a single file, run: 
+```
+cat CANVAZ.osm.gz.part* > CANVAZ.osm.gz
+gzip -d CANVAZ.osm.gz
+```
+Then, create a OSRM server instance
+(we recommend doing this inside of a `tmux` instance).
 The command for doing so is:
 
 ```
+tmux 
 osrm-routed CANVAZ.osm
 ```
 
-We recommend running this inside of a `tmux` instance.
 
 Then, to calculate the buffers, run `00_load_clinic_catchment_areas` and `00_load_tract_catchment_areas`,
 which will write the output to `data/`.
