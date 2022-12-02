@@ -1,6 +1,6 @@
 # Replication code for Roubenoff, Slootjes, and Bloemraad, Spatial and Sociodemographic Vulnerability: Quantifying Accessibility to Health Care and Legal Services for Immigrants in California, Arizona, and Nevada
 
-[Bay Area Fig](Bay_area.png)
+![Bay Area Fig](Bay_area.png)
 
 This repository contains R code for replicating all figures and analysis.
 We have deposited our data in the Harvard Dataverse (LINK). 
