@@ -1,0 +1,7 @@
+*.zip
+*.Rdata
+*.dbf
+FALSE/*
+.DS_Store
+*.swo
+*.swp
