@@ -23,20 +23,25 @@ dataverse repository.
 # Important note about replication:
 
 For this project, we calculated travel-time buffers around census tracts
-and clinic locations. We used OpenStreetMap and the OpenSourceRoutingMachine
+and clinic locations. We used [OpenStreetMap](https://www.openstreetmap.org/about) 
+data downloaded from [Geofabrik](https://www.geofabrik.de/) and the [OpenSourceRoutingMachine](https://project-osrm.org/)
 to do so. Replicating these buffers is not a trivial operation, so we 
 have included the calculated buffers within the Dataverse repository `data` folder,
 and the following steps are not needed to run the analysis.
 
-To replicate the buffers, you must first install OSM and OSRM following
-the instructions on their respective websites. [This quide](https://benjaminberhault.com//post/2018/12/08/set-up-an-osrm-server-on-ubuntu.html) 
+Should you desire to replicate the buffers, you must first install OSRM. 
+[This quide](https://benjaminberhault.com//post/2018/12/08/set-up-an-osrm-server-on-ubuntu.html) 
 was very helpful (Note: we have only 
 tested this on linux/mac osx, and are unsure how the process will differ
 for Windows). Then, make sure 
 that you have downloaded the Dataverse repository and that the 
 `osm` folder is present. 
-The OSM file `CANVAZ.osm` is quite large and has been compressed. First, run: 
+The OSM file `CANVAZ.osm` is quite large and has been compressed. 
+This file contains the [`us-west` file from Geofabrik](http://download.geofabrik.de/north-america/us-west.html)
+that has been cropped to California, Nevada, and Arizona.
+In the project root directory, run: 
 ```
+cd data/osm
 gzip -d CANVAZ.osm.gz
 ```
 Then, create a OSRM server instance
