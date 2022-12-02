@@ -4,7 +4,7 @@
 ![Bay Area Fig](Bay_area.png)
 
 This repository contains R code for replicating all figures and analysis.
-We have deposited our data in the Harvard Dataverse (LINK). 
+[We have deposited our data in the Harvard Dataverse](https://doi.org/10.7910/DVN/RCQXN1). 
 To replicate our results, follow the following instructions:
 
 1) Clone this repository to your home directory.
