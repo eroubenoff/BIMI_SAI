@@ -5,11 +5,12 @@
 
 This repository contains R code for replicating all figures and analysis.
 [We have deposited our data in the Harvard Dataverse](https://doi.org/10.7910/DVN/RCQXN1). 
+The core files are access restricted; please contact the authors (Ethan Roubenoff; eroubenoff@berkeley.edu) for access.
 To replicate our results, follow the following instructions:
 
 1) Clone this repository to your home directory.
 
-2) Download all data from the Harvard Dataverse. The dataverse repository
+2) Request permission and download all data from the Harvard Dataverse. The dataverse repository
 contains two folders: `data` and `figs`. In this git repository
 are two corresponding empty folders. To replicate our findings, 
 you must copy the contents of both folders from the 
